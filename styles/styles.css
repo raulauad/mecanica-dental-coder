@@ -61,7 +61,8 @@ a{
 .dropdown-menu{
     background-color: #124180;
     border-radius: 10px;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
     /* Hacer que el menu no salga de la pantalla */
     position: absolute;
     left: 50%;
@@ -70,7 +71,7 @@ a{
     min-width: 200px;
     z-index: 1000;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 
     /* Eliminar background blanco */
     --bs-dropdown-link-hover-bg: none;
@@ -101,6 +102,24 @@ a{
 .logo-container{
     padding: 0.5rem 1rem;
     margin: 1rem;
+}
+/*Footer*/
+footer{
+    padding:0.5rem 1rem;
+
+    background-color: #124180;
+    color: #cbe3fb;
+    border-radius: 10px;
+}
+footer p{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+footer a{
+    color: #cbe3fb;
+}
+footer a:hover{
+    color: #7494bc;
 }
 /*Main Inicio*/
 .present-image{
