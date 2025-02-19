@@ -1,0 +1,252 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+/*Codigos de colores:
+#cbe3fb Fondo
+#124180 Letras
+#7494bc Contraste*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0 2rem;
+    font-family: 'Roboto Serif', serif;
+    font-size: 1rem;
+    background-color:#cbe3fb;
+}
+/*Nav header*/
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #124180;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.navbar{
+    background-color: #124180;
+    border-radius: 10px;
+}
+.navbar h1{
+    color: #7494bc;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+}
+.dropdown{
+    justify-self: end;
+    align-items: center;
+    gap: 1rem;
+}
+.btn-menu{
+    background-color: #124180;
+    border-radius: 1rem;
+    border: 1px solid #cbe3fb;
+
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+.btn-menu:hover{
+    background-color: #7494bc;
+    color: #cbe3fb;
+    opacity: 0.8;
+}
+.menu-icon{
+    width: 3rem;
+    height: 4rem;
+}
+.dropdown-menu{
+    background-color: #124180;
+    border-radius: 10px;
+
+    /* Hacer que el menu no salga de la pantalla */
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Eliminar background blanco */
+    --bs-dropdown-link-hover-bg: none;
+    --bs-dropdown-link-active-color: none;
+    --bs-dropdown-link-active-bg: none;
+}
+    /*Menu dropdown responsive*/
+
+.dropdown-menu a{
+    color: #cbe3fb;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    padding: 0.5rem 1rem;
+}
+.dropdown-menu a:hover{
+    color: #7494bc;
+}
+.logo{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+}
+.logo:hover{
+    border: 4px solid #7494bc;
+    opacity: 0.8;
+}
+.logo-container{
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+/*Main*/
+.present-image{
+    width: 30rem;
+    height: auto;
+}
+.image-container{
+    border-bottom: 3px solid #7494bc;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+.job-container{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #124180;
+    padding: 1rem;
+}
+
+/* }
+a:hover{
+    color: #7494bc;
+}
+.navbar{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        "logo links links links links links";
+    align-items: center;
+
+    border-bottom: 1px solid #124180;
+    margin-bottom: 1rem;
+}
+.links{
+    grid-area: links;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+.logo-container{
+    grid-area: logo;
+}
+.logo{
+    width: 2rem;
+    height: 2rem;   
+} */
+
+
+/*Main*/
+/* .main-container{
+    margin-top: 5rem;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.job-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #124180;
+}
+.job-1{
+    border-bottom: #124180 1px solid;
+    padding: 10px;
+}
+.job-2{
+    border-top: #124180 1px solid;
+    padding: 10px;
+}
+.image-container{
+    grid-area: image;
+}
+.present-image{
+    width: 23rem;
+    height: 23rem;
+    border: #124180 1px solid;
+    border-radius: 10px;
+}
+/*Footer*/
+/* footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    background-color: #124180;
+    color: #cbe3fb;
+    border-radius: 10px;
+}
+footer a{
+    color: #cbe3fb;
+}*/
+/*Breakpoint small devices*/
+/*@media (max-width: 450px){
+    .body{  
+        margin: 0 1rem;
+    }
+    .navbar{
+        margin-top: 1rem;
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        grid-template-areas: 
+        ". . logo . ."
+        "links links links links links";
+        
+        
+        border-bottom: 1px solid #124180;
+        padding-bottom: 1rem;
+    }
+    .links{
+        grid-area: links;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .logo-container{
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+    }
+    .logo{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .main-container{
+        margin-top: 3rem;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 10px;
+    }
+}*/
+
+
+
+
