@@ -30,6 +30,15 @@ a{
     background-color: #124180;
     border-radius: 10px;
 }
+@media (max-width: 450px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+}
 .navbar h1{
     color: #7494bc;
     font-size: 2rem;
@@ -105,15 +114,29 @@ a{
 }
 /*Footer*/
 footer{
-    padding:0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0.5rem 1rem;    
 
     background-color: #124180;
     color: #cbe3fb;
     border-radius: 10px;
 }
+@media (max-width: 450px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+}
 footer p{
     font-size: 1.5rem;
     font-weight: 400;
+    padding-top: 1rem;
 }
 footer a{
     color: #cbe3fb;
@@ -123,7 +146,7 @@ footer a:hover{
 }
 /*Main Inicio*/
 .present-image{
-    width: 30rem;
+    width: auto;
     height: auto;
 }
 .image-container{
@@ -137,6 +160,15 @@ footer a:hover{
     color: #124180;
     padding: 1rem;
 }
+@media (max-width: 450px){
+    .present-image{
+        width: 100%;
+        height: 100%;
+    }
+    .job-container{
+        font-size: 1rem;
+    }
+}
 
 
 
@@ -149,7 +181,33 @@ footer a:hover{
 
 /*Main Galeria*/
 
+/*Main Servicios*/
+.cards-container{
+    gap: 1rem;
+    padding: 1rem;
+}
+.card{
 
+    background-color: #7494bc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+.card img{
+    width: 100%;
+    height: 11rem;
+    border-radius: 10px;
+}
+.card-body h5{
+    color: #124180;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.card-body p{
+    color: #cbe3fb;
+    font-size: 1rem;
+    font-weight: 400;
+}
 /* }
 a:hover{
     color: #7494bc;
