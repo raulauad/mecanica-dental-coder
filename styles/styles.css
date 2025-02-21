@@ -30,6 +30,7 @@ a{
     background-color: #124180;
     border-radius: 10px;
 }
+/*Responsive navbar*/
 @media (max-width: 450px){
     .navbar{
         display: flex;
@@ -124,6 +125,7 @@ footer{
     color: #cbe3fb;
     border-radius: 10px;
 }
+/*Responsive footer*/
 @media (max-width: 450px){
     footer{
         display: flex;
@@ -160,6 +162,7 @@ footer a:hover{
     color: #124180;
     padding: 1rem;
 }
+/*Responsive main inicio*/
 @media (max-width: 450px){
     .present-image{
         width: 100%;
@@ -183,12 +186,17 @@ footer a:hover{
 
 /*Main Servicios*/
 .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     padding: 1rem;
+    margin-top: 2rem;
+
+    text-align: center;
 }
 .card{
-
-    background-color: #7494bc;
+    background-color:#FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 1rem;
@@ -199,12 +207,20 @@ footer a:hover{
     border-radius: 10px;
 }
 .card-body h5{
+    margin-bottom: 1rem;
+
+    border-bottom: 1px solid #124180;
     color: #124180;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 .card-body p{
-    color: #cbe3fb;
+    padding: 1rem 0.5rem;
+
+    border-right: 1px solid #124180;
+    border-left: 1px solid #124180;
+    border-radius: 0.5rem;
+    color: #124180;
     font-size: 1rem;
     font-weight: 400;
 }
