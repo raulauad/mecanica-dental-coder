@@ -72,7 +72,7 @@ a{
 .dropdown-menu{
     background-color: #124180;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
     opacity: 1;
     /* Hacer que el menu no salga de la pantalla */
     position: absolute;
@@ -148,8 +148,22 @@ footer a:hover{
     color: #7494bc;
 }
 
+.main-container h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #124180;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
+    border-radius: 10px;
+
+}
+
 /*Main Inicio*/
 .main-container h1{
+    text-align: center;
     font-size: 2rem;
     font-weight: 400;
     color: #124180;
@@ -162,7 +176,9 @@ footer a:hover{
 @media(max-width: 450px){
     .main-container h1{
         font-size: 1.5rem;
-        text-align: center;
+    }
+    .main-container h2{
+        font-size: 1.5rem;
     }
 }
 .present-image{
@@ -217,7 +233,7 @@ footer a:hover{
 .card{
     background-color:#FFFFFF;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
     padding: 1rem;
 }
 .card img{
