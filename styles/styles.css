@@ -213,6 +213,65 @@ footer a:hover{
     font-weight: 400;
 }
 
+/*Formulario Contacto*/
+.main-formulario-contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    background-color:#7494bc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
+}
+.formulario-contacto label{
+    color: #124180;
+    font-size: 1rem;
+    font-weight: 400;
+
+    background-color: #cbe3fb;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
+}
+.formulario-contacto input{
+    width: auto;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #124180;
+}
+.formulario-contacto textarea{
+    width: auto;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #124180;
+}
+.formulario-contacto button{
+    background-color: #cbe3fb;
+    color: #124180;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #124180;
+}
+.formulario-contacto button:hover{
+    background-color: #124180;
+    color: #cbe3fb;
+    opacity: 0.8;
+}
+
 /*Media *Width 450* */
 @media (max-width: 450px){
     .navbar{
