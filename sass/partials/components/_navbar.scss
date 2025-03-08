@@ -1,0 +1,64 @@
+//Referenciando el modulo de variables
+@use "../base/variables" as baseVars;
+@use "../utilities/mixins" as mixins;
+
+.logo-container{
+    padding: baseVars.$padding-base;
+    margin: 1rem;
+    .logo{
+        width: 5rem;
+        height: 5rem;
+        border-radius: baseVars.$border-radius;
+        &:hover{
+            @include mixins.hover-effect;
+        }
+    }
+}
+.navbar{
+    background-color: baseVars.$color-primario;
+    border-radius: baseVars.$border-radius;
+    h5{
+        color: baseVars.$color-contraste;
+        font-size: baseVars.$font-size-base;
+    }
+    .dropdown{
+        justify-self: end;
+        align-items: center;
+        gap: 1rem;
+        .btn-menu{
+            background-color: baseVars.$color-primario;
+            border-radius: baseVars.$border-radius;
+            border: 1px solid baseVars.$color-secundario;
+            margin: 1rem;
+            padding: baseVars.$padding-base;
+            &:hover{
+                @include mixins.hover-effect;
+            }
+            .menu-icon{
+                width: 3rem;
+                height: 4rem;
+            }
+        }
+        .dropdown-menu{
+            @extend .navbar;
+            box-shadow: baseVars.$box-shadow2;
+            //Ajusta el menu al tamaño de pantalla
+            @include mixins.dropdown-menu-config;
+            //Eliminar background blanco
+            @include mixins.delete-style-a;
+            a{
+                color: baseVars.$color-secundario;
+                font-size: baseVars.$font-size-a;
+                font-weight: 400;
+                padding: 0.5rem 1rem;
+                &:hover{
+                    border-radius: baseVars.$border-radius;
+                    color: baseVars.$color-secundario;
+                    opacity: 0.8;
+                }
+            }
+            
+        }
+    }
+}
+

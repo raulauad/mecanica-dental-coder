@@ -1,0 +1,14 @@
+@use "../base/variables" as baseVars;
+
+body{
+    margin: 0 2rem;
+    font-family: 'Roboto Serif', serif;
+    font-size: 1rem;
+    background-color: baseVars.$color-secundario;
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+}

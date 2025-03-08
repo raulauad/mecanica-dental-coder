@@ -1,0 +1,55 @@
+@use "../base/variables" as baseVars; 
+
+//Mixins Generales
+@mixin flex($direction, $j-content, $a-items){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+
+//Mixins .navbar
+
+//Para que no salga el dropdown fuera de la pantalla
+@mixin dropdown-menu-config{
+    position: absolute;     
+    top: 100%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    z-index: 1000;
+    padding: 1rem;
+}
+//Borrar estilos de bootstrap de los enlaces del dropdown
+@mixin delete-style-a{
+    --bs-dropdown-link-hover-bg: none;
+    --bs-dropdown-link-active-color: none;
+    --bs-dropdown-link-active-bg: none;
+}
+//Efecto hover logo, menudropdown
+@mixin hover-effect{
+    background-color: baseVars.$color-contraste;
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+//Mixins .main-container
+@mixin main-container{
+    @include flex(column, center, center);
+    margin-top:2rem;
+    padding: baseVars.$padding-base;
+}
+
+@mixin main-title{
+    font-size: baseVars.$font-size-titles;
+    color: baseVars.$color-primario;
+    margin-top: 2rem;
+    padding: baseVars.$padding-base;
+
+}
+
+@mixin background-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

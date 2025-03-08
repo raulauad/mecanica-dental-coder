@@ -1,0 +1,20 @@
+//base
+
+@use "partials/base/reset";
+@use "partials/base/tipografias";
+@use "partials/base/variables" as baseVars;
+
+//components
+@use "partials/components/body";
+@use "partials/components/navbar";
+@use "partials/components/main";
+@use "partials/components/cards";
+@use "partials/components/formulario";
+@use "partials/components/buttons";
+@use "partials/components/footer";
+
+//utilities
+
+@use "partials/utilities/mapas";
+@use "partials/utilities/mixins" as mixins;
+

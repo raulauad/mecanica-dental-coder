@@ -1,0 +1,54 @@
+@use "../base/variables" as baseVars;
+@use "../utilities/mixins" as mixins;
+
+//Index
+.main-container{
+    @include mixins.main-container;
+
+    .main-title{
+        @include mixins.main-title;
+    }
+    .image-container{
+        border-bottom: 3px solid #7494bc;
+        border-radius: 10px;
+        .present-image{
+            width: auto;
+            height: auto;
+        }    
+    }
+    .job-container{
+        @include mixins.flex(column, center, center);
+        padding: 2rem;
+        text-align: center;
+        font-size: baseVars.$font-size-a;
+        color: #333333;
+        box-shadow: baseVars.$box-shadow;
+
+        background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
+        @include mixins.background-image;
+
+        border-radius: baseVars.$border-radius;
+        box-shadow: 0 8px 16px rgba(18,65,128,0.5);
+
+        background-color: rgba(203, 227, 251, 0.5);
+        background-blend-mode: overlay;
+        
+        .main-service-container{
+            background-color: rgba(203, 227, 251, 0.5);
+            border-radius: baseVars.$border-radius;
+            padding: baseVars.$padding-base;
+            width: 100%;
+        }
+        a{
+            color: #333333;
+            &:hover{
+                color: baseVars.$color-primario;
+            }
+        }
+        .job-2{
+            margin-top: 2rem;
+        }
+    }
+
+}
+
