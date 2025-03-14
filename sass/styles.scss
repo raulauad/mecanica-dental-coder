@@ -5,6 +5,7 @@
 @use "partials/base/variables" as baseVars;
 
 //components
+@use "partials/components/loadingscreen";
 @use "partials/components/body";
 @use "partials/components/navbar";
 @use "partials/components/main";

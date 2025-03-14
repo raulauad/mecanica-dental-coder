@@ -1,0 +1,29 @@
+//Botones
+@use '../utilities/mixins' as mixins;
+@use '../base/variables' as baseVars;
+
+.logo-container{
+    padding: baseVars.$padding-base;
+    margin: 1rem;
+    .logo{
+        width: 5rem;
+        height: 5rem;
+        border-radius: baseVars.$border-radius;
+        &:hover{
+            @include mixins.hover-effect-logo;
+        }
+    }
+}
+
+.formulario-contacto button{
+    padding: baseVars.$padding-base;
+
+    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+    background-color: baseVars.$color-secundario;
+    border-radius: baseVars.$border-radius;
+    border: 1px solid baseVars.$color-secundario;
+    &:hover{
+        background-color: baseVars.$color-primario;
+        color: baseVars.$color-secundario;
+    }
+}

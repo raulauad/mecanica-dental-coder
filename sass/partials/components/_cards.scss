@@ -1,0 +1,58 @@
+//Service-cards
+@use '../utilities/mixins' as mixins;
+@use '../base/variables' as baseVars;
+.cards-container{
+    @include mixins.flex(row, space-between, none);
+    flex-wrap: wrap;
+    margin-top: baseVars.$margin-top;
+    margin-bottom: baseVars.$margin-bottom;
+    padding: baseVars.$padding-base;
+    gap: 1rem;
+    .card{
+        @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-primario);
+        text-align: center;
+        background-color: baseVars.$color-secundario;
+        border-radius: baseVars.$border-radius;
+        box-shadow: baseVars.$box-shadow;
+
+        padding: baseVars.$padding-base;
+
+        &:hover{
+            @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-secundario);
+            background-color: baseVars.$color-primario;
+
+            .card-body {
+                h5 {
+                    border-bottom: 1px solid baseVars.$color-secundario;
+                }
+                p{
+                    border-right: 1px solid baseVars.$color-secundario;
+                    border-left: 1px solid baseVars.$color-secundario;
+                    border-radius: baseVars.$border-radius;
+                    box-shadow: baseVars.$box-shadow2;
+                }
+            }
+        }
+        img{
+            width: 100%;
+            height: 11rem;
+            border-radius: baseVars.$border-radius;
+        }
+        .card-body {
+            h5{
+                margin-bottom: 1rem;
+                border-bottom: 1px solid baseVars.$color-primario;
+                font-size: baseVars.$font-size-a;
+            }
+            p{
+                padding: 1rem;
+                border-right: 1px solid baseVars.$color-primario;
+                border-left: 1px solid baseVars.$color-primario;
+
+                border-radius: baseVars.$border-radius;
+                box-shadow: baseVars.$box-shadow;
+            }
+        }
+
+    }
+}

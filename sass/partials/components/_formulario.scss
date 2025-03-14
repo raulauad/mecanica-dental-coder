@@ -1,0 +1,50 @@
+//Formulario de CONTACTO
+@use "../utilities/mixins" as mixins;
+@use "../base/variables" as baseVars;
+
+.main-contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .formulario-contacto{
+        @include mixins.flex(column, center, center);
+        width: 100%;
+        gap: 1rem;
+        padding: baseVars.$padding-base;
+        margin-top: baseVars.$margin-top;
+
+        background-color: baseVars.$color-contraste;
+        border-radius: baseVars.$border-radius;
+        box-shadow: baseVars.$box-shadow;
+
+        label{
+            padding: baseVars.$padding-base;            
+
+            @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-secundario);
+            background-color: baseVars.$color-primario;
+            border-radius: baseVars.$border-radius;
+            box-shadow: baseVars.$box-shadow;
+        }
+
+        input{
+            width: 100%;
+            padding: baseVars.$padding-base;
+            margin-top: 0.5rem;
+            border: none;
+            border-radius: baseVars.$border-radius;
+        }
+
+        textarea{
+            width: 50%;
+            padding: baseVars.$padding-base;
+            margin-top: 0.5rem;
+            border-radius: baseVars.$border-radius;
+            overflow: hidden;
+            resize: none;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}

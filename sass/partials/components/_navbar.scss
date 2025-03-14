@@ -2,21 +2,11 @@
 @use "../base/variables" as baseVars;
 @use "../utilities/mixins" as mixins;
 
-.logo-container{
-    padding: baseVars.$padding-base;
-    margin: 1rem;
-    .logo{
-        width: 5rem;
-        height: 5rem;
-        border-radius: baseVars.$border-radius;
-        &:hover{
-            @include mixins.hover-effect;
-        }
-    }
-}
+
 .navbar{
     background-color: baseVars.$color-primario;
     border-radius: baseVars.$border-radius;
+    padding: baseVars.$padding-base;
     h5{
         color: baseVars.$color-contraste;
         font-size: baseVars.$font-size-base;
@@ -32,7 +22,7 @@
             margin: 1rem;
             padding: baseVars.$padding-base;
             &:hover{
-                @include mixins.hover-effect;
+                @include mixins.hover-effect-logo;
             }
             .menu-icon{
                 width: 3rem;

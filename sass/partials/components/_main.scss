@@ -1,48 +1,62 @@
 @use "../base/variables" as baseVars;
 @use "../utilities/mixins" as mixins;
 
+//Placeholder para estilos compartidos
+%shared-styles {
+    padding: baseVars.$padding-base;
+    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
+    text-align: center;
+    background-color: baseVars.$color-primario;
+    border: 1px solid baseVars.$color-secundario;
+    border-radius: baseVars.$border-radius;
+    box-shadow: baseVars.$box-shadow;
+}
 //Index
 .main-container{
-    @include mixins.main-container;
-
+    @include mixins.flex(column, center, center);
     .main-title{
-        @include mixins.main-title;
+        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
     }
     .image-container{
-        border-bottom: 3px solid #7494bc;
-        border-radius: 10px;
-        .present-image{
-            width: auto;
-            height: auto;
-        }    
+        margin-top: baseVars.$margin-top;
+    .present-image{
+        width: auto;
+        height: auto;
+    }    
     }
+
     .job-container{
         @include mixins.flex(column, center, center);
         padding: 2rem;
+        margin-top: baseVars.$margin-top;
         text-align: center;
         font-size: baseVars.$font-size-a;
-        color: #333333;
-        box-shadow: baseVars.$box-shadow;
+        color: baseVars.$color-secundario;
 
-        background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
-        @include mixins.background-image;
-
+        background-color: rgba(18,65,128,0.9);
         border-radius: baseVars.$border-radius;
         box-shadow: 0 8px 16px rgba(18,65,128,0.5);
 
-        background-color: rgba(203, 227, 251, 0.5);
-        background-blend-mode: overlay;
-        
-        .main-service-container{
-            background-color: rgba(203, 227, 251, 0.5);
+        .service-container{
+            box-shadow: baseVars.$box-shadow2;
             border-radius: baseVars.$border-radius;
+            color: baseVars.$color-primario;
+            text-align: center;
+
             padding: baseVars.$padding-base;
             width: 100%;
+
+            background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
+            @include mixins.background-image;
+
+            background-color: rgba(203, 227, 251, 0.8);
+            background-blend-mode: overlay;
         }
         a{
-            color: #333333;
+            color: baseVars.$color-primario;
             &:hover{
-                color: baseVars.$color-primario;
+                @include mixins.hover-effect-a;
+                color: #ca6212;
             }
         }
         .job-2{
@@ -52,3 +66,42 @@
 
 }
 
+
+@media (max-width: 450px){
+    .main-container{
+        @include mixins.flex(column, center, center);
+    }
+}
+
+//Main services
+.main-services-container{
+    h2{
+        @include mixins.flex(column, center, center);
+        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        text-align: center;
+    }
+    .parrafo-fachero{
+        @extend %shared-styles;
+    }
+}
+
+//Main contacto
+.main-contact-container{
+    @include mixins.flex(column, center, center);
+    h2{
+        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        text-align: center;
+    }
+    p{
+        @extend %shared-styles;
+    }
+}
+
+//Main galeria
+.main-gallery-container{
+    @include mixins.flex(column, center, center);
+    h2{
+        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        text-align: center;
+    }
+}

@@ -1,7 +1,8 @@
 //Colores
 $color-primario: #124180;
-$color-secundario: #cbe3fb;
+$color-secundario: #cfe2fc;
 $color-contraste: #7494bc;
+$color-hover: #ca6212;
 
 //Tamaño de fuente
 $font-size-base: 1rem;
@@ -16,7 +17,11 @@ $box-shadow: 0 4px 8px rgba(18, 65, 128, 0.5);
 $box-shadow2: 0 4px 8px rgba(203, 227, 251, 0.5);
 
 //Padding
-$padding-base: 0.5rem 1rem;
+$padding-base: 1rem;
+
+//Margins
+$margin-top: 2rem;
+$margin-bottom: 2rem;
 
 //Breakpoints
 /*$breakpoints: (

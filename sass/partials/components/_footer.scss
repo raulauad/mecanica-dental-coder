@@ -1,0 +1,22 @@
+//Footer
+@use "../utilities/mixins" as mixins;
+@use "../base/variables" as baseVars;
+
+.footer-container{
+    @include mixins.flex(row, space-between, center);
+    margin-top: 2rem;
+    padding: baseVars.$padding-base;
+
+    background-color: baseVars.$color-primario;
+    border-radius: baseVars.$border-radius;
+
+    font-size: baseVars.$font-size-base;
+    color: baseVars.$color-secundario;
+
+    a{
+        @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
+        &:hover{
+            @include mixins.hover-effect-a;
+        }
+    }
+}

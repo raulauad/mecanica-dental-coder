@@ -7,7 +7,15 @@
     justify-content: $j-content;
     align-items: $a-items;
 }
+@mixin hover-effect-a{
+    color: baseVars.$color-contraste;
+    transform: scale(1.1);
+}
 
+@mixin tipografia($size, $color){
+    font-size: $size;
+    color: $color;
+}
 
 //Mixins .navbar
 
@@ -27,26 +35,21 @@
     --bs-dropdown-link-active-bg: none;
 }
 //Efecto hover logo, menudropdown
-@mixin hover-effect{
+@mixin hover-effect-logo{
     background-color: baseVars.$color-contraste;
     opacity: 0.8;
     transform: scale(1.1);
 }
 
 //Mixins .main-container
-@mixin main-container{
-    @include flex(column, center, center);
-    margin-top:2rem;
-    padding: baseVars.$padding-base;
+
+@mixin main-title($size, $color, $margin, $padding){
+    font-size:$size;
+    color:$color;
+    margin-top:$margin;
+    padding:$padding;
 }
 
-@mixin main-title{
-    font-size: baseVars.$font-size-titles;
-    color: baseVars.$color-primario;
-    margin-top: 2rem;
-    padding: baseVars.$padding-base;
-
-}
 
 @mixin background-image{
     background-size: cover;
