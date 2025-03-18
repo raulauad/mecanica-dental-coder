@@ -7,6 +7,11 @@
     background-color: baseVars.$color-primario;
     border-radius: baseVars.$border-radius;
     padding: baseVars.$padding-base;
+    @include mixins.flex(row, space-between, center);
+
+    @media (max-width: 768px){
+        @include mixins.flex(column, center, center);
+    }
     h5{
         color: baseVars.$color-contraste;
         font-size: baseVars.$font-size-base;
@@ -30,7 +35,9 @@
             }
         }
         .dropdown-menu{
-            @extend .navbar;
+            background-color: baseVars.$color-primario;
+            border-radius: baseVars.$border-radius;
+            padding: baseVars.$padding-base;
             box-shadow: baseVars.$box-shadow2;
             //Ajusta el menu al tamaño de pantalla
             @include mixins.dropdown-menu-config;
@@ -47,8 +54,15 @@
                     opacity: 0.8;
                 }
             }
+            @media (max-width: 768px){
+                a{
+                    font-size: baseVars.$font-size-base;
+                    text-align: center;
+                }
+            }
             
         }
     }
 }
 
+//Media queries

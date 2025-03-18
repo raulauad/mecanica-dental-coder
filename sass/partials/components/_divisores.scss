@@ -1,0 +1,26 @@
+//Index
+@use '../base/variables' as baseVars;
+@use '../utilities/mixins' as mixins;
+
+.divisor-container{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .divisor{
+        width: 95.3vw;
+        height: 11rem;
+        border-radius: baseVars.$border-radius;
+    }
+}
+
+@media (max-width: 768px) {
+    .divisor-container {
+        margin-top: 1rem; 
+    }
+    .divisor {
+        height: 8rem;
+    }
+}

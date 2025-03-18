@@ -19,4 +19,15 @@
             @include mixins.hover-effect-a;
         }
     }
+    @media (max-width: 768px){
+        @include mixins.flex(column, center, center);
+        padding: baseVars.$padding-base;
+        gap: 1rem;
+        text-align: center;
+        a{
+            font-size: baseVars.$font-size-base;
+        }
+    }
 }
+
+//Media queries

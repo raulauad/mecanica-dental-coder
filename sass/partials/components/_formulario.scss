@@ -3,9 +3,6 @@
 @use "../base/variables" as baseVars;
 
 .main-contact-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
     .formulario-contacto{
         @include mixins.flex(column, center, center);
@@ -44,6 +41,19 @@
             resize: none;
             &:focus{
                 outline: none;
+            }
+        }
+        
+        @media (max-width: 768px){
+            label{
+                width: 100%;
+                font-size: baseVars.$font-size-base;
+            }
+            textarea{
+                width: 100%;
+            }
+            input{
+                width: 100%;
             }
         }
     }

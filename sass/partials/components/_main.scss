@@ -2,15 +2,7 @@
 @use "../utilities/mixins" as mixins;
 
 //Placeholder para estilos compartidos
-%shared-styles {
-    padding: baseVars.$padding-base;
-    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
-    text-align: center;
-    background-color: baseVars.$color-primario;
-    border: 1px solid baseVars.$color-secundario;
-    border-radius: baseVars.$border-radius;
-    box-shadow: baseVars.$box-shadow;
-}
+
 //Index
 .main-container{
     @include mixins.flex(column, center, center);
@@ -19,20 +11,28 @@
     }
     .image-container{
         margin-top: baseVars.$margin-top;
-    .present-image{
-        width: auto;
-        height: auto;
-    }    
+        .present-image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media (max-width: 768px){
+        .main-title{
+            font-size: baseVars.$font-size-a;
+            text-align: center;
+        }
+        .present-image{
+            width: 100%;
+            height: auto;
+        }
     }
 
     .job-container{
         @include mixins.flex(column, center, center);
+        @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
         padding: 2rem;
         margin-top: baseVars.$margin-top;
         text-align: center;
-        font-size: baseVars.$font-size-a;
-        color: baseVars.$color-secundario;
-
         background-color: rgba(18,65,128,0.9);
         border-radius: baseVars.$border-radius;
         box-shadow: 0 8px 16px rgba(18,65,128,0.5);
@@ -62,16 +62,26 @@
         .job-2{
             margin-top: 2rem;
         }
+        @media (max-width: 768px){
+            font-size: baseVars.$font-size-base;
+            padding: baseVars.$padding-base;
+            .service-container{
+                text-align: center;
+                h2{
+                    font-size: baseVars.$font-size-a;
+                }
+                ul{
+                    font-size: baseVars.$font-size-base;
+                    text-align: center;
+                    padding-right: 2rem;
+                }
+                padding: baseVars.$padding-base;
+            }
+        }
     }
 
 }
 
-
-@media (max-width: 450px){
-    .main-container{
-        @include mixins.flex(column, center, center);
-    }
-}
 
 //Main services
 .main-services-container{
@@ -81,8 +91,17 @@
         text-align: center;
     }
     .parrafo-fachero{
-        @extend %shared-styles;
+        @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+        text-align: center;
     }
+    @media (max-width: 768px){
+        h2{
+            font-size: baseVars.$font-size-a;
+        }
+        .parrafo-fachero{
+            font-size: baseVars.$font-size-base;
+        }
+    }    
 }
 
 //Main contacto
@@ -93,7 +112,16 @@
         text-align: center;
     }
     p{
-        @extend %shared-styles;
+        @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+        text-align: center;
+    }
+    @media (max-width: 450px){
+        h2{
+            font-size: baseVars.$font-size-a;
+        }
+        p{
+            font-size: baseVars.$font-size-base;
+        }
     }
 }
 
@@ -105,3 +133,21 @@
         text-align: center;
     }
 }
+
+    //Media main index
+    @media (max-width: 768px){
+        .main-container{
+            .main-title{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .present-image{
+                width: 100%;
+                height: auto;
+            }
+            .job-container{
+                font-size: 1rem;
+            }
+        }
+    }
+

@@ -26,4 +26,8 @@
         background-color: baseVars.$color-primario;
         color: baseVars.$color-secundario;
     }
+    @media (max-width: 768px){
+        font-size: baseVars.$font-size-base;
+        padding: baseVars.$padding-base;
+    }
 }
