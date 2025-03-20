@@ -14,11 +14,3 @@ body{
         text-decoration: none;
     }
 }
-
-body::-webkit-scrollbar {
-    width: 0; /* Oculta la barra de desplazamiento */
-}
-
-body {
-    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
-}
