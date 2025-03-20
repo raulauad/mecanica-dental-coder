@@ -20,6 +20,7 @@
         .main-title{
             font-size: baseVars.$font-size-a;
             text-align: center;
+            width: 100%;
         }
         .present-image{
             width: 100%;
@@ -65,6 +66,7 @@
         @media (max-width: 768px){
             font-size: baseVars.$font-size-base;
             padding: baseVars.$padding-base;
+            width: 100%;
             .service-container{
                 text-align: center;
                 h2{
