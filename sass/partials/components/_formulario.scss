@@ -3,17 +3,16 @@
 @use "../base/variables" as baseVars;
 
 .main-contact-container{
-    
+
     .formulario-contacto{
         @include mixins.flex(column, center, center);
-        width: 100%;
+        width: 47.5%;
         gap: 1rem;
         padding: baseVars.$padding-base;
-        margin-top: baseVars.$margin-top;
 
         background-color: baseVars.$color-contraste;
         border-radius: baseVars.$border-radius;
-        box-shadow: baseVars.$box-shadow;
+        box-shadow: baseVars.$box-shadow2;
 
         label{
             padding: baseVars.$padding-base;            
