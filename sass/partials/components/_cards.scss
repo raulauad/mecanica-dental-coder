@@ -7,11 +7,9 @@
     margin-bottom: baseVars.$margin-bottom;
     padding: baseVars.$padding-base;
     gap: 1rem;
-
     @media (max-width: 768px){
-        @include mixins.flex(column, center, none);
+        @include mixins.flex(column, space-between, none)
     }
-
     .card{
         @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-primario);
         text-align: center;
