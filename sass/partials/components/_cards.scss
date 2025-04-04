@@ -3,12 +3,13 @@
 @use '../base/variables' as baseVars;
 .cards-container{
     @include mixins.flex(row, space-between, none);
+    flex-wrap: wrap;
     margin-top: baseVars.$margin-top;
     margin-bottom: baseVars.$margin-bottom;
     padding: baseVars.$padding-base;
     gap: 1rem;
     @media (max-width: 768px){
-        @include mixins.flex(column, space-between, none)
+        @include mixins.flex(column, space-between, none);
     }
     .card{
         @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-primario);
@@ -18,7 +19,7 @@
         box-shadow: baseVars.$box-shadow;
 
         padding: baseVars.$padding-base;
-
+        grid-area: card;
         &:hover{
             @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-secundario);
             background-color: baseVars.$color-primario;

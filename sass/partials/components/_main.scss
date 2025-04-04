@@ -83,7 +83,7 @@
             padding: baseVars.$padding-base;
             width: 100%;
 
-            background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
+            background-image: "/assets/imagenes/Servicios/dienteMetal.jpg";
             @include mixins.background-image;
 
             background-color: rgba(203, 227, 251, 0.8);
@@ -232,12 +232,7 @@
 
 //Main galeria
 .main-gallery-container{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "titulo titulo" 
-                        "carousel parrafo";
-    gap: 1rem;
+    @include mixins.flex(column, center, center);
     h2{
         @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
         text-align: center;
@@ -247,31 +242,73 @@
         }
     }
     .parrafo-galeria{
-        grid-area: parrafo;
         @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
         text-align: center;
-        border-right: 1px solid baseVars.$color-primario;
-        border-top: 1px solid baseVars.$color-primario;
-        border-bottom: 1px solid baseVars.$color-primario;
 
-        border-radius: baseVars.$border-radius;
-        box-shadow: 0 8px 16px rgba(18, 65, 128, 0.5);
         padding: 1rem;
         @media (max-width: 768px){
             font-size: baseVars.$font-size-base;
         }
     }
-    carousel-container{
-        grid-area: carousel;
-    }
-    @media (max-width: 768px){
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:    "titulo"
-                                "carousel"
-                                "parrafo";
 
+    @media (max-width: 768px){
+        @include mixins.flex(column, center, center);
+    }
+}
+
+//Main sobreMí
+.main-aboutm-container{
+    @include mixins.flex(column, center, center);
+    h2{
+        @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-primario);
+        text-align: center;
+        margin-top: baseVars.$margin-top;
+    }
+    p{
+        @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+        text-align: center;
+        margin-top: baseVars.$margin-top;
+    }
+    .aboutme-container{
+        @include mixins.flex(row, center, center);
+        background-color: baseVars.$color-primario;
+        border-radius: baseVars.$border-radius;
+        border: 5px solid baseVars.$color-contraste;
+        box-shadow: baseVars.$box-shadow;
+
+        padding: baseVars.$padding-base;
+        margin-top: baseVars.$margin-top;
+
+        @media (max-width: 768px){
+            @include mixins.flex(column, center, center);
+        }
+        .artcle-1{
+            .img-ame{
+                width: 35rem;
+                height: 25rem;
+                float: left;
+                margin-right: 1rem;
+                border-radius: baseVars.$border-radius;
+                @media (max-width: 768px){
+                    width: 100%;
+                }
+            }
+            h3{
+                @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-secundario);
+                text-align: center;
+                @media (max-width: 768px){
+                    font-size: baseVars.$font-size-a;
+                    padding-top: 2rem;
+                }
+            }
+            p{
+                @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
+                text-align: center;
+                @media (max-width: 768px){
+                    font-size: baseVars.$font-size-base;
+                }
+            }
+        }
     }
 }
 
