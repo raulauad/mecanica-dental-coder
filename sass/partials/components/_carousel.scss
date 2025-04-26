@@ -2,13 +2,15 @@
 @use "../utilities/mixins" as mixins;
 
 .carousel-container{
-    box-shadow: 0 8px 16px rgba(18, 65, 128, 0.5);
+    margin-bottom: 1rem;
     .img-galeria{
         width: 40rem;
         height: 40rem;
         object-fit: cover;
+        border-radius: baseVars.$border-radius;
         @media (max-width: 768px){
-            width: 100%;
+            width: 20rem;
+            height: 20rem;
         }
     }
 }

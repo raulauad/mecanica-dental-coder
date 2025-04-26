@@ -24,6 +24,13 @@ $padding-nav: 0.5rem 1rem;
 $margin-top: 2rem;
 $margin-bottom: 2rem;
 
+//Mapa de colores
+$colors: (
+    'primario': $color-primario,
+    'secundario': $color-secundario,
+    'contraste': $color-contraste,
+    'hover': $color-hover
+);
 //Breakpoints
 /*$breakpoints: (
     'x-small': 320px,

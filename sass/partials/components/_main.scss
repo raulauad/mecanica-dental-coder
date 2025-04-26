@@ -7,7 +7,7 @@
 .main-container{
     @include mixins.flex(column, center, center);
     .main-title{
-        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        @include mixins.main-title(baseVars.$font-size-titles, map-get(baseVars.$colors, primario)/*uso del mapa*/, baseVars.$margin-top, baseVars.$padding-base);
     }
     .image-container{
         margin-top: baseVars.$margin-top;
@@ -146,7 +146,7 @@
 .main-contact-container{
     @include mixins.flex(column, center, center);
     h2{
-        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        @include mixins.main-title(baseVars.$font-size-titles, map-get(baseVars.$colors, primario)/*uso del mapa*/, baseVars.$margin-top, baseVars.$padding-base);
         text-align: center;
     }
     p{
@@ -234,9 +234,10 @@
 .main-gallery-container{
     @include mixins.flex(column, center, center);
     h2{
-        @include mixins.main-title(baseVars.$font-size-titles, baseVars.$color-primario, baseVars.$margin-top, baseVars.$padding-base);
+        @include mixins.tipografia(baseVars.$font-size-titles, map-get(baseVars.$colors, primario)/*uso del mapa*/);
         text-align: center;
-        grid-area: titulo;
+
+        margin-top: baseVars.$margin-top;
         @media(max-width: 768px){
             font-size: baseVars.$font-size-a;
         }
@@ -244,12 +245,73 @@
     .parrafo-galeria{
         @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
         text-align: center;
-
-        padding: 1rem;
+        padding: baseVars.$padding-base;
         @media (max-width: 768px){
             font-size: baseVars.$font-size-base;
         }
+        a{
+            @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+            text-align: center;
+            &:hover{
+                @include mixins.hover-effect-a;
+                color: #ca6212;
+            }
+        }
     }
+
+    .galeria-2-container{
+        @include mixins.flex(row, center, center);
+        width: 100%;
+        gap: 2rem;
+        padding: baseVars.$padding-base;
+
+        border-radius: baseVars.$border-radius;
+        box-shadow: baseVars.$box-shadow;
+        border: 1px solid baseVars.$color-primario;
+
+        @media (max-width: 768px){
+            @include mixins.flex(column, center, center);
+            gap: 1rem;
+        }
+        figure{
+            @include mixins.flex(column, center, center);
+
+            .img-galeria-2{
+                width: 35rem;
+                height: 35rem;
+                object-fit: cover;
+                border-radius: baseVars.$border-radius;
+                box-shadow: baseVars.$box-shadow;
+                margin-top: baseVars.$margin-top;
+
+                @media (max-width: 768px){
+                    width: 20rem;
+                    height: 20rem;
+                }
+            }
+            figcaption{
+                @include mixins.tipografia(baseVars.$font-size-a, map-get(baseVars.$colors, primario)/*uso del mapa*/);
+                text-align: center;
+                margin-top: 0.5rem;
+                border-bottom: 1px solid baseVars.$color-secundario;
+                @media (max-width: 768px){
+                    font-size: baseVars.$font-size-base;
+                }
+            }
+            .parrafo-galeria-2{
+                @include mixins.tipografia(baseVars.$font-size-base, baseVars.$color-primario);
+                text-align: center;
+                margin-top: 0.5rem;
+                width: 30rem;
+                @media (max-width: 768px){
+                    font-size: baseVars.$font-size-base;
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
 
     @media (max-width: 768px){
         @include mixins.flex(column, center, center);
@@ -269,43 +331,146 @@
         text-align: center;
         margin-top: baseVars.$margin-top;
     }
-    .aboutme-container{
-        @include mixins.flex(row, center, center);
-        background-color: baseVars.$color-primario;
+    @media (max-width: 768px){
+        h2{
+            font-size: baseVars.$font-size-a;
+        }
+        p{
+            font-size: baseVars.$font-size-base;
+        }
+    }
+    .aboutme-container-2{
+        @include mixins.flex(column, center, center);
+
+        margin-top: baseVars.$margin-top;
+        padding: baseVars.$padding-base;
+
         border-radius: baseVars.$border-radius;
-        border: 5px solid baseVars.$color-contraste;
+        border: 1px solid baseVars.$color-primario;
         box-shadow: baseVars.$box-shadow;
 
-        padding: baseVars.$padding-base;
-        margin-top: baseVars.$margin-top;
+        .artcle-aboutm{
+            @include mixins.flex(row, center, center);
 
-        @media (max-width: 768px){
-            @include mixins.flex(column, center, center);
+            @media (max-width: 768px){
+                @include mixins.flex(column, center, center);
+            }
+            figure{
+                .img-aboutm{
+                    width: 35rem;
+                    height: 25rem;
+                    border-radius: baseVars.$border-radius;
+                    box-shadow: baseVars.$box-shadow2;
+
+                    @media (max-width: 768px){
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .title-paragraph{
+                @include mixins.flex(column, center, center);
+                padding: baseVars.$padding-base;
+
+                h3{
+                    @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-primario);
+                    text-align: center;
+                }
+                p{
+                    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+                    text-align: center;
+                }
+                @media (max-width: 768px){
+                    h3{
+                        font-size: baseVars.$font-size-a;
+                    }
+                    p{
+                        font-size: baseVars.$font-size-base;
+                    }    
+                }
+            }
         }
-        .artcle-1{
-            .img-ame{
-                width: 35rem;
-                height: 25rem;
-                float: left;
-                margin-right: 1rem;
-                border-radius: baseVars.$border-radius;
-                @media (max-width: 768px){
-                    width: 100%;
+        .artcle-aboutm-2{
+            @include mixins.flex(row-reverse, center, center);
+
+            border-top: 1px solid baseVars.$color-primario;
+            @media (max-width: 768px){
+                @include mixins.flex(column, center, center);
+            }
+            figure{
+                .img-aboutm{
+                    width: 35rem;
+                    height: 25rem;
+                    margin-top: 1rem;
+                    border-radius: baseVars.$border-radius;
+                    box-shadow: baseVars.$box-shadow2;
+
+                    @media (max-width: 768px){
+                        width: 100%;
+                        height: auto;
+                    }
                 }
             }
-            h3{
-                @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-secundario);
-                text-align: center;
+            .title-paragraph{
+                @include mixins.flex(column, center, center);
+                padding: baseVars.$padding-base;
+                h3{
+                    @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-primario);
+                    text-align: center;
+                }
+                p{
+                    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+                    text-align: center;
+                }
                 @media (max-width: 768px){
-                    font-size: baseVars.$font-size-a;
-                    padding-top: 2rem;
+                    h3{
+                        font-size: baseVars.$font-size-a;
+                    }
+                    p{
+                        font-size: baseVars.$font-size-base;
+                    }    
                 }
             }
-            p{
-                @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-secundario);
-                text-align: center;
+        }
+        .artcle-aboutm-3{
+            @include mixins.flex(row, center, center);
+            border-top: 1px solid baseVars.$color-primario;
+
+            @media (max-width: 768px){
+                @include mixins.flex(column, center, center);
+            }
+            figure{
+                .img-aboutm{
+                    width: 35rem;
+                    height: 25rem;
+                    margin-top: baseVars.$margin-top;
+                    border-radius: baseVars.$border-radius;
+                    box-shadow: baseVars.$box-shadow2;
+
+                    @media (max-width: 768px){
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .title-paragraph{
+                @include mixins.flex(column, center, center);
+                padding: baseVars.$padding-base;
+                h3{
+                    @include mixins.tipografia(baseVars.$font-size-titles, baseVars.$color-primario);
+                    text-align: center;
+                }
+                p{
+                    @include mixins.tipografia(baseVars.$font-size-a, baseVars.$color-primario);
+                    text-align: center;
+                }
                 @media (max-width: 768px){
-                    font-size: baseVars.$font-size-base;
+                    h3{
+                        font-size: baseVars.$font-size-a;
+                    }
+                    p{
+                        font-size: baseVars.$font-size-base;
+                    }    
                 }
             }
         }
