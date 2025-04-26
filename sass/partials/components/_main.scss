@@ -29,8 +29,7 @@
             height: 33rem;
             image-rendering: optimizeQuality;
             border-radius: baseVars.$border-radius;
-            box-shadow:  0px 10px 20px rgba(18, 65, 128, 0.8);
-            
+            box-shadow:  0px 10px 20px rgba(18, 65, 128, 0.8);   
         }
         .image-articulador{
             width: 45%;
@@ -83,8 +82,11 @@
             padding: baseVars.$padding-base;
             width: 100%;
 
-            background-image: "/assets/imagenes/Servicios/dienteMetal.jpg";
+
+
+            background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
             @include mixins.background-image;
+
 
             background-color: rgba(203, 227, 251, 0.8);
             background-blend-mode: overlay;
@@ -272,6 +274,8 @@
         @media (max-width: 768px){
             @include mixins.flex(column, center, center);
             gap: 1rem;
+
+            width: 100%;
         }
         figure{
             @include mixins.flex(column, center, center);
@@ -285,8 +289,8 @@
                 margin-top: baseVars.$margin-top;
 
                 @media (max-width: 768px){
-                    width: 20rem;
-                    height: 20rem;
+                    width: 100%;
+                    height: auto;
                 }
             }
             figcaption{

@@ -228,7 +228,7 @@ body::-webkit-scrollbar {
   text-align: center;
   padding: 1rem;
   width: 100%;
-  background-image: "/assets/imagenes/Servicios/dienteMetal.jpg";
+  background-image: url("/assets/imagenes/Servicios/dienteMetal.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -460,6 +460,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    width: 100%;
   }
 }
 .main-gallery-container .galeria-2-container figure {
@@ -478,8 +479,8 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 768px) {
   .main-gallery-container .galeria-2-container figure .img-galeria-2 {
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: auto;
   }
 }
 .main-gallery-container .galeria-2-container figure figcaption {
