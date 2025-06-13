@@ -9,7 +9,7 @@
         object-fit: cover;
         border-radius: baseVars.$border-radius;
         @media (max-width: 768px){
-            width: 20rem;
+            width: 100%;
             height: 20rem;
         }
     }
